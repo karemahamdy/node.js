@@ -3,6 +3,7 @@ import * as http from 'http';
 const server = http.createServer((req, res) => {
   res.statusCode = 200;
   res.setHeader('Content-Type', 'text/plain');
+  
   const data ={
     products: [{
         id: 1,
@@ -20,7 +21,7 @@ const server = http.createServer((req, res) => {
                     ],
   }
   res.write(JSON.stringify(data));
-  res.end('Hello, World!\n');
+  res.end();
 });
 
 server.listen(5000, () => {
